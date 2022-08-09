@@ -1,0 +1,1 @@
+/usr/bin/clang++   -fno-exceptions -fno-rtti   CMakeFiles/table_test.dir/util/testutil.cc.o CMakeFiles/table_test.dir/table/table_test.cc.o  -o table_test  libleveldb.a lib/libgmock.a lib/libgtest.a third_party/benchmark/src/libbenchmark.a -lsnappy -lpthread -pthread /usr/lib/x86_64-linux-gnu/librt.so 
