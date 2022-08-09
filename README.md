@@ -71,12 +71,14 @@ Dynamic Boundary:
 
 ## 3.1 整体时间
 
-- 每个 I/O 访问 data cache (dc) 的时间 ($T_{DC}$):
+- 每个 I/O 访问 data cache (dc) 的时间 ( $T_{DC}$ ):
+  
   $$
   data \ cache \ single \ IO\ (T_{DC})= \frac{dc\ miss\ time + dc \ hit\ time}{Accesses}
   $$
 
-- 每个 I/O 访问 meta cache 的时间 ($T_{LM}$)：
+- 每个 I/O 访问 meta cache 的时间 ( $T_{LM}$ )：
+  
   $$
   lastlevel\ metacache \ single\ IO\ (T_{LM}) = \frac{lastlevel\ miss \ time + lastlevel\ hit \ time + \{otherlevels\ hit \ time\}}{ Accesses}
   $$
@@ -88,19 +90,24 @@ Dynamic Boundary:
 如果命中 data cache 或 lastlevel meta cache 的单个 I/O 时间为:
 
 - 访问 data cache 并命中的单个 I/O 耗时 $H_{DC}$:
-  $$
+
+$$
   H_{DC}=\frac{dc\ hit \ time}{dc \ hit\ Accesses}
-  $$
+$$
 
 - 访问 lastlevel meta cache 并命中的单个 I/O 耗时 $H_{LM}$:
-  $$
+
+$$
   H_{LM}= \frac{dc\ miss + lastlevel\ hit\ time + \{otherlevels \ hit \ time\}  + data\ block\ read}{lastlevel\ hit\ Accesses}
-  $$
+$$
+  
 
 - 访问 lastlevel meta cache 并命中的单个 I/O 耗时 $\overline{H_{LM}}$:
-  $$
+
+$$
   \overline{H_{LM}} = \frac{dc\ miss +lastlevel\ miss\ time + \{otherlevels \ hit \ time\} + data\ block\ read}{lastlevel\ miss\ Accesses}
-  $$
+$$
+  
 
 因为最大层元数据缓存容量一定，分配策略的目的为：
 
@@ -114,15 +121,19 @@ Dynamic Boundary:
 ## 4.1 代价最小
 
 在固定的工作集 (working set) 中，代价和由三部分组成：数据缓存命中 + 最大层元数据缓存命中 + 最大层元数据缓存不命中
+
 $$
 cost = H_{DC}*Hit_{DC} + H_{LM} * Hit_{LM} + \overline{H_{LM} }*\overline{Hit_{LM} }
 $$
+
 其中 $\overline{Hit_{LM} } = ws\_size-Hit_{DC}-Hit_{LM}$
 
 当没有分配 data cache 时，代价的最小值设定为 $cost_{init}$：
+
 $$
 cost_{init} = H_{LM} * Hit_{LM} + \overline{H_{LM} }*\overline{Hit_{LM} }
 $$
+
 代价最小的决定因素有两个：
 
 1. 缓存要尽量命中，即 $\overline{Hit_{LM} }$  尽量少
@@ -135,9 +146,11 @@ $$
 ## 4.2 缓存划分方向
 
 设 p 为数据缓存和最大层元数据缓存平均命中时间的比值，即
+
 $$
 p = \frac{(H_{LM}-H_{DC})*Hit_{DC}}{(\overline{H_{LM}}-H_{LM})*\overline{Hit_{LM}}}
 $$
+
 由于data cache 的出现，会增加 lastlevel meta cache 缺失的风险，所以比较时应该将最大层元数据缓存缺失的原因加进来。
 
 由 p 值处理三种情况：
@@ -151,33 +164,39 @@ $$
 ## 4.3 划分数值
 
 缓存增加/减小的值还与工作集中缓存命中的相对比例 $\Delta$ 有关，缓存命中次数越多，说明其缓存的数据更热，被读的可能更大：
+
 $$
 \Delta = \frac{data\ cache\ hit + lastlevel\ meta\ cache\ hit}{2 * lastlevel\ meta\ cache\ hit}
 $$
+
 根据 $\Delta $ 和 p 值，可以得到四种情况，$R_{DC}$ 表示当前 data cache 的容量，$R_{LM}$ 表示当前 lastlevel meta cache 的容量：
 
 1. $\Delta >= 1, p >1$，说明 data cache 命中多但开销大，减小的容量分给 lastlevel metacache
-   $$
-   R_{LM} = R_{LM} + \Delta * \frac{R_{LM}}{R_{LM}+R_{DC}}\\
+
+$$
+   R_{LM} = R_{LM} + \Delta * \frac{R_{LM}}{R_{LM}+R_{DC}} \qquad \\
    R_{DC} = R_{DC} - \Delta * \frac{R_{LM}}{R_{LM}+R_{DC}} \\
-   $$
+$$
 
 2. $\Delta >= 1, p < 1$，说明 data cache 命中多且开销小，增大 data cache 容量，减小 lastlevel metacache
-   $$
-   R_{LM} = R_{LM} - \Delta * \frac{R_{DC}}{R_{LM}+R_{DC}}\\
-   R_{DC} = R_{DC} + \Delta * \frac{R_{DC}}{R_{LM}+R_{DC}}\\
-   $$
+
+$$
+   R_{LM} = R_{LM} - \Delta * \frac{R_{DC}}{R_{LM}+R_{DC}} \qquad \\
+   R_{DC} = R_{DC} + \Delta * \frac{R_{DC}}{R_{LM}+R_{DC}} \\
+$$
 
 3. $\Delta < 1, p > 1$，说明 data cache 命中不多且开销大，可以适当减小 data cache 容量
-   $$
-   R_{LM} = R_{LM} + \frac{1}{\Delta} * \frac{R_{LM}}{R_{LM}+R_{DC}}\\
+
+$$
+   R_{LM} = R_{LM} + \frac{1}{\Delta} * \frac{R_{LM}}{R_{LM}+R_{DC}} \qquad \\ 
    R_{DC} = R_{DC} - \frac{1}{\Delta} * \frac{R_{LM}}{R_{LM}+R_{DC}}
-   $$
+$$
 
 4. $\Delta < 1, p < 1$，说明 data cache 命中不多但开销小，需要增大 data cache 容量
-   $$
-   R_{LM} = R_{LM} - \frac{1}{\Delta} * \frac{R_{DC}}{R_{LM}+R_{DC}}\\
+
+$$
+   R_{LM} = R_{LM} - \frac{1}{\Delta} * \frac{R_{DC}}{R_{LM}+R_{DC}} \qquad \\ 
    R_{DC} = R_{DC} + \frac{1}{\Delta}  * \frac{R_{DC}}{R_{LM}+R_{DC}}
-   $$
+$$
    
 
