@@ -95,8 +95,8 @@ recovery_test: CMakeFiles/recovery_test.dir/util/testutil.cc.o
 recovery_test: CMakeFiles/recovery_test.dir/db/recovery_test.cc.o
 recovery_test: CMakeFiles/recovery_test.dir/build.make
 recovery_test: libleveldb.a
-recovery_test: lib/libgmock.a
-recovery_test: lib/libgtest.a
+recovery_test: lib/libgmockd.a
+recovery_test: lib/libgtestd.a
 recovery_test: third_party/benchmark/src/libbenchmark.a
 recovery_test: /usr/lib/x86_64-linux-gnu/librt.so
 recovery_test: CMakeFiles/recovery_test.dir/link.txt

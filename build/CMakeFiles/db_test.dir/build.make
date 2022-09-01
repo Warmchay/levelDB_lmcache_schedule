@@ -95,8 +95,8 @@ db_test: CMakeFiles/db_test.dir/util/testutil.cc.o
 db_test: CMakeFiles/db_test.dir/db/db_test.cc.o
 db_test: CMakeFiles/db_test.dir/build.make
 db_test: libleveldb.a
-db_test: lib/libgmock.a
-db_test: lib/libgtest.a
+db_test: lib/libgmockd.a
+db_test: lib/libgtestd.a
 db_test: third_party/benchmark/src/libbenchmark.a
 db_test: /usr/lib/x86_64-linux-gnu/librt.so
 db_test: CMakeFiles/db_test.dir/link.txt

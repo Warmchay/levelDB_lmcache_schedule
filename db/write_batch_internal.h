@@ -37,7 +37,7 @@ class WriteBatchInternal {
 
   static void SetContents(WriteBatch* batch, const Slice& contents);
 
-  static Status InsertInto(const WriteBatch* batch, MemTable* memtable); // A 加了实现中没有用处的 tmp 临时 key 向量参数 
+  static Status InsertInto(const WriteBatch* batch, MemTable* memtable); // Change-3 加了实现中没有用处的 tmp 临时 key 向量参数 
 
   static Status InsertAndCheck(const WriteBatch* batch, MemTable* memtable, std::vector<Slice>& tmp);  //22-7-11 用于在将数据写入Memtable时，从中获取key
 

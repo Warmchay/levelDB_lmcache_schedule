@@ -89,7 +89,7 @@ class WriteBatchItemPrinter : public WriteBatch::Handler {
     r += "'\n";
     dst_->Append(r);
   }
-  // A 加 add 方法
+  // Change-3 加 add 方法
   void Add(const Slice& key) override {
     std::string r = " add '";
     AppendEscapedStringTo(&r, key);

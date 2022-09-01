@@ -95,8 +95,8 @@ log_test: CMakeFiles/log_test.dir/util/testutil.cc.o
 log_test: CMakeFiles/log_test.dir/db/log_test.cc.o
 log_test: CMakeFiles/log_test.dir/build.make
 log_test: libleveldb.a
-log_test: lib/libgmock.a
-log_test: lib/libgtest.a
+log_test: lib/libgmockd.a
+log_test: lib/libgtestd.a
 log_test: third_party/benchmark/src/libbenchmark.a
 log_test: /usr/lib/x86_64-linux-gnu/librt.so
 log_test: CMakeFiles/log_test.dir/link.txt

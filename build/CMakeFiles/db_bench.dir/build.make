@@ -110,8 +110,8 @@ db_bench: CMakeFiles/db_bench.dir/util/testutil.cc.o
 db_bench: CMakeFiles/db_bench.dir/benchmarks/db_bench.cc.o
 db_bench: CMakeFiles/db_bench.dir/build.make
 db_bench: libleveldb.a
-db_bench: lib/libgmock.a
-db_bench: lib/libgtest.a
+db_bench: lib/libgmockd.a
+db_bench: lib/libgtestd.a
 db_bench: CMakeFiles/db_bench.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/cache_schedule/leveldb/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable db_bench"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/db_bench.dir/link.txt --verbose=$(VERBOSE)

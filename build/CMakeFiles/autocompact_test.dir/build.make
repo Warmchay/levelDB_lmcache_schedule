@@ -95,8 +95,8 @@ autocompact_test: CMakeFiles/autocompact_test.dir/util/testutil.cc.o
 autocompact_test: CMakeFiles/autocompact_test.dir/db/autocompact_test.cc.o
 autocompact_test: CMakeFiles/autocompact_test.dir/build.make
 autocompact_test: libleveldb.a
-autocompact_test: lib/libgmock.a
-autocompact_test: lib/libgtest.a
+autocompact_test: lib/libgmockd.a
+autocompact_test: lib/libgtestd.a
 autocompact_test: third_party/benchmark/src/libbenchmark.a
 autocompact_test: /usr/lib/x86_64-linux-gnu/librt.so
 autocompact_test: CMakeFiles/autocompact_test.dir/link.txt

@@ -95,8 +95,8 @@ env_posix_test: CMakeFiles/env_posix_test.dir/util/testutil.cc.o
 env_posix_test: CMakeFiles/env_posix_test.dir/util/env_posix_test.cc.o
 env_posix_test: CMakeFiles/env_posix_test.dir/build.make
 env_posix_test: libleveldb.a
-env_posix_test: lib/libgmock.a
-env_posix_test: lib/libgtest.a
+env_posix_test: lib/libgmockd.a
+env_posix_test: lib/libgtestd.a
 env_posix_test: third_party/benchmark/src/libbenchmark.a
 env_posix_test: /usr/lib/x86_64-linux-gnu/librt.so
 env_posix_test: CMakeFiles/env_posix_test.dir/link.txt

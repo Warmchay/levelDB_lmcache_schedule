@@ -95,8 +95,8 @@ fault_injection_test: CMakeFiles/fault_injection_test.dir/util/testutil.cc.o
 fault_injection_test: CMakeFiles/fault_injection_test.dir/db/fault_injection_test.cc.o
 fault_injection_test: CMakeFiles/fault_injection_test.dir/build.make
 fault_injection_test: libleveldb.a
-fault_injection_test: lib/libgmock.a
-fault_injection_test: lib/libgtest.a
+fault_injection_test: lib/libgmockd.a
+fault_injection_test: lib/libgtestd.a
 fault_injection_test: third_party/benchmark/src/libbenchmark.a
 fault_injection_test: /usr/lib/x86_64-linux-gnu/librt.so
 fault_injection_test: CMakeFiles/fault_injection_test.dir/link.txt

@@ -95,8 +95,8 @@ skiplist_test: CMakeFiles/skiplist_test.dir/util/testutil.cc.o
 skiplist_test: CMakeFiles/skiplist_test.dir/db/skiplist_test.cc.o
 skiplist_test: CMakeFiles/skiplist_test.dir/build.make
 skiplist_test: libleveldb.a
-skiplist_test: lib/libgmock.a
-skiplist_test: lib/libgtest.a
+skiplist_test: lib/libgmockd.a
+skiplist_test: lib/libgtestd.a
 skiplist_test: third_party/benchmark/src/libbenchmark.a
 skiplist_test: /usr/lib/x86_64-linux-gnu/librt.so
 skiplist_test: CMakeFiles/skiplist_test.dir/link.txt

@@ -95,8 +95,8 @@ filter_block_test: CMakeFiles/filter_block_test.dir/util/testutil.cc.o
 filter_block_test: CMakeFiles/filter_block_test.dir/table/filter_block_test.cc.o
 filter_block_test: CMakeFiles/filter_block_test.dir/build.make
 filter_block_test: libleveldb.a
-filter_block_test: lib/libgmock.a
-filter_block_test: lib/libgtest.a
+filter_block_test: lib/libgmockd.a
+filter_block_test: lib/libgtestd.a
 filter_block_test: third_party/benchmark/src/libbenchmark.a
 filter_block_test: /usr/lib/x86_64-linux-gnu/librt.so
 filter_block_test: CMakeFiles/filter_block_test.dir/link.txt

@@ -95,8 +95,8 @@ status_test: CMakeFiles/status_test.dir/util/testutil.cc.o
 status_test: CMakeFiles/status_test.dir/util/status_test.cc.o
 status_test: CMakeFiles/status_test.dir/build.make
 status_test: libleveldb.a
-status_test: lib/libgmock.a
-status_test: lib/libgtest.a
+status_test: lib/libgmockd.a
+status_test: lib/libgtestd.a
 status_test: third_party/benchmark/src/libbenchmark.a
 status_test: /usr/lib/x86_64-linux-gnu/librt.so
 status_test: CMakeFiles/status_test.dir/link.txt

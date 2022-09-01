@@ -95,8 +95,8 @@ issue320_test: CMakeFiles/issue320_test.dir/util/testutil.cc.o
 issue320_test: CMakeFiles/issue320_test.dir/issues/issue320_test.cc.o
 issue320_test: CMakeFiles/issue320_test.dir/build.make
 issue320_test: libleveldb.a
-issue320_test: lib/libgmock.a
-issue320_test: lib/libgtest.a
+issue320_test: lib/libgmockd.a
+issue320_test: lib/libgtestd.a
 issue320_test: third_party/benchmark/src/libbenchmark.a
 issue320_test: /usr/lib/x86_64-linux-gnu/librt.so
 issue320_test: CMakeFiles/issue320_test.dir/link.txt

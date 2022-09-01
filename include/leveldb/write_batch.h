@@ -37,7 +37,7 @@ class LEVELDB_EXPORT WriteBatch {
     virtual ~Handler();
     virtual void Put(const Slice& key, const Slice& value) = 0;
     virtual void Delete(const Slice& key) = 0;
-    // A 添加 Add 方法使其能正常 override
+    // Change-3 添加 Add 方法使其能正常 override
     virtual void Add(const Slice& key) = 0;
   };
 

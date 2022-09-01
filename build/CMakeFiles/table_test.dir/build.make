@@ -95,8 +95,8 @@ table_test: CMakeFiles/table_test.dir/util/testutil.cc.o
 table_test: CMakeFiles/table_test.dir/table/table_test.cc.o
 table_test: CMakeFiles/table_test.dir/build.make
 table_test: libleveldb.a
-table_test: lib/libgmock.a
-table_test: lib/libgtest.a
+table_test: lib/libgmockd.a
+table_test: lib/libgtestd.a
 table_test: third_party/benchmark/src/libbenchmark.a
 table_test: /usr/lib/x86_64-linux-gnu/librt.so
 table_test: CMakeFiles/table_test.dir/link.txt

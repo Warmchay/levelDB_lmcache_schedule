@@ -95,8 +95,8 @@ cache_test: CMakeFiles/cache_test.dir/util/testutil.cc.o
 cache_test: CMakeFiles/cache_test.dir/util/cache_test.cc.o
 cache_test: CMakeFiles/cache_test.dir/build.make
 cache_test: libleveldb.a
-cache_test: lib/libgmock.a
-cache_test: lib/libgtest.a
+cache_test: lib/libgmockd.a
+cache_test: lib/libgtestd.a
 cache_test: third_party/benchmark/src/libbenchmark.a
 cache_test: /usr/lib/x86_64-linux-gnu/librt.so
 cache_test: CMakeFiles/cache_test.dir/link.txt

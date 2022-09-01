@@ -60,7 +60,6 @@ Status WriteBatch::Iterate(Handler* handler, bool flag) const {  // 22-7-11 增�
             GetLengthPrefixedSlice(&input, &value)) {
           handler->Put(key, value);
           // 22-7-11 遍历数据插入memtable时，同时放入数据缓存检查队列
-          // Q Add 没有实现，数据缓存检查队列看 InsertAndCheck
           if (flag) handler->Add(key); 
         } else {
           return Status::Corruption("bad WriteBatch Put");

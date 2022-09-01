@@ -70,7 +70,7 @@ size_t cost_avg = 0;
 
 //22-7-11 删除数据缓存的值
 static void DeleteCachedValue(const Slice&key, void* value) {
-  // A 把 value 改为 val，因为存在重复定义的问题
+  // Change-3 把 value 改为 val，因为存在重复定义的问题
   Slice* val = reinterpret_cast<Slice*>(value);
   delete val;
 }
@@ -158,7 +158,7 @@ Options SanitizeOptions(const std::string& dbname,
   }
   // 22-7-11 默认数据缓存大小
   if (result.data_cache == nullptr) {
-    // Q 为什么 data_cache 选用了 8 << 20
+    // Change-3 data cache 初始设置为 0
     result.data_cache = NewLRUCache(0);  // 22-4 默认8MB的数据块缓存大小 
   }
   return result;
@@ -249,7 +249,7 @@ void DBImpl::CheckDataCacheThread() {
       // No more background work after a background error.
     } else {
       // 执行,这些并发操作可能会产生不一致性，但是不能影响前台IO，因此采用无锁的方式执行
-      // A 如果采用无锁会报错，原因可能是 newkey_queue_ 为 deque，异步操作不能保证原子性
+      // Change-3 如果采用无锁会报错，原因可能是 newkey_queue_ 为 deque，异步操作不能保证原子性
       // mutex_.Unlock();
       while (!newkey_queue_.empty()) {
         Slice key = newkey_queue_.front();                  
@@ -269,7 +269,7 @@ void DBImpl::CheckDataCacheThread() {
         while (queue_op_) { }  // 生产端在加数据，等待其完成
         newkey_queue_.pop_front();
       } 
-      // A 根据前面的修改，该 thread 已经有 mutex 因此不用再 hold lock
+      // Change-3 根据前面的修改，该 thread 已经有 mutex 因此不用再 hold lock
       // mutex_.Lock();
     }
 
@@ -1255,7 +1255,7 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
       // Change-3: 如果 key 在 mem/imm 都没有，在缓存中找
       // 22-7-11 先判断数据缓存，如果没有再去查找
       if (dc_inuse_) {
-        size_t datacache_hit_micro = 0; // change-3 数据缓存命中时间统计
+        size_t datacache_hit_micro = 0; // Change-3 数据缓存命中时间统计
         size_t datacache_miss_micro = 0;
         
         Cache* data_cache = options_.data_cache;
@@ -1265,10 +1265,9 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
         Cache::Handle* handle = data_cache->Lookup(ukey);  
         if (handle != nullptr) {
           // 在数据缓存中找到key
-          // Change-3
+          // Change-3 计算 data cache 命中时间
           Slice* v = reinterpret_cast<Slice*>(data_cache->Value(handle));
           value->assign(v->data(), v->size());
-          // Q 为何要 release handle?
           data_cache->Release(handle);
           datacache_hit++;
           access_count++;
@@ -1299,7 +1298,7 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
         }
 
         if (stats.lastlevel_hit){
-            // 最大层元数据缓存命中
+            // Change-3 最大层元数据缓存命中
           read_stats[maxLevel].metahit_lastlevel_micros += env_->NowMicros() - start_disk_time + datacache_miss_micro;
           metacache_hit++;
           access_count++;
@@ -1312,12 +1311,11 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
         
       if (access_count == options_.ws_size) {         
         // 22-7-11 初步打印两个缓存命中率情况,后续可根据命中情况自动调整两个缓存大小
-        // Q metacache 和 datacache 的区别
-        // A size_t 的打印类型为 %zu
+        // Change-3 size_t 的打印类型为 %zu
         
         printf("metacache hit: %zu, metacache miss: %zu, datacache hit: %zu \n", metacache_hit, metacache_miss,datacache_hit);
 
-        // 得到单个 I/O 平均耗时
+        // Change-3 得到单个 I/O 平均耗时
         double h_dc = datacache_hit == 0 ? 0 : datacache_hit_sum_micro / (double) datacache_hit;
         double h_lm = metacache_hit == 0 ? 0 : (read_stats[maxLevel].metahit_lastlevel_micros) / (double) metacache_hit;
         double h_lm_ = metacache_miss == 0 ? 0 : (read_stats[maxLevel].metaload_lastlevel_micros) / (double) metacache_miss;
@@ -1333,8 +1331,9 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
         // table_cache_->ResizeLastlevelCache(max_open_files * 1 / 1000.0);
         // data_cache->Resize(totalSize * 999 / 1000.0);
         
-        // 计算 cost 的次数
 
+        // FIXME: Change-3 计算 cost 的次数
+        
         if (!first_adjust) {
           cost_0 = h_lm * metacache_hit + h_lm_ * metacache_miss;
           printf("cost_0: h_lm:%lf, h_lm_:%lf\n", h_lm, h_lm_);
@@ -1414,17 +1413,17 @@ Status DBImpl::Get(const ReadOptions& options, const Slice& key,
 
           }
         }
-
+        
 
         
-        // 时间初始化
+        // Change-3 时间初始化
         // printf("metahit_lastlevel_micros: %zu, metaload_lastlevel_micros: %zu\n", 
         //             read_stats[maxLevel].metahit_lastlevel_micros, read_stats[maxLevel].metaload_lastlevel_micros);
         read_stats[maxLevel].metahit_lastlevel_micros = 0;
         read_stats[maxLevel].metaload_lastlevel_micros = 0;
         datacache_hit_sum_micro = 0;
         
-        // 次数初始化
+        // Change-3 次数初始化
         access_count = 0;
         metacache_hit = 0;
         metacache_miss = 0;

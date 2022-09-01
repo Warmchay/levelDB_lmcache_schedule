@@ -95,8 +95,8 @@ no_destructor_test: CMakeFiles/no_destructor_test.dir/util/testutil.cc.o
 no_destructor_test: CMakeFiles/no_destructor_test.dir/util/no_destructor_test.cc.o
 no_destructor_test: CMakeFiles/no_destructor_test.dir/build.make
 no_destructor_test: libleveldb.a
-no_destructor_test: lib/libgmock.a
-no_destructor_test: lib/libgtest.a
+no_destructor_test: lib/libgmockd.a
+no_destructor_test: lib/libgtestd.a
 no_destructor_test: third_party/benchmark/src/libbenchmark.a
 no_destructor_test: /usr/lib/x86_64-linux-gnu/librt.so
 no_destructor_test: CMakeFiles/no_destructor_test.dir/link.txt

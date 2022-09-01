@@ -95,8 +95,8 @@ issue200_test: CMakeFiles/issue200_test.dir/util/testutil.cc.o
 issue200_test: CMakeFiles/issue200_test.dir/issues/issue200_test.cc.o
 issue200_test: CMakeFiles/issue200_test.dir/build.make
 issue200_test: libleveldb.a
-issue200_test: lib/libgmock.a
-issue200_test: lib/libgtest.a
+issue200_test: lib/libgmockd.a
+issue200_test: lib/libgtestd.a
 issue200_test: third_party/benchmark/src/libbenchmark.a
 issue200_test: /usr/lib/x86_64-linux-gnu/librt.so
 issue200_test: CMakeFiles/issue200_test.dir/link.txt

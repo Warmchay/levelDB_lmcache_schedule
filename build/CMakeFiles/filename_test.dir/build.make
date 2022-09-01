@@ -95,8 +95,8 @@ filename_test: CMakeFiles/filename_test.dir/util/testutil.cc.o
 filename_test: CMakeFiles/filename_test.dir/db/filename_test.cc.o
 filename_test: CMakeFiles/filename_test.dir/build.make
 filename_test: libleveldb.a
-filename_test: lib/libgmock.a
-filename_test: lib/libgtest.a
+filename_test: lib/libgmockd.a
+filename_test: lib/libgtestd.a
 filename_test: third_party/benchmark/src/libbenchmark.a
 filename_test: /usr/lib/x86_64-linux-gnu/librt.so
 filename_test: CMakeFiles/filename_test.dir/link.txt

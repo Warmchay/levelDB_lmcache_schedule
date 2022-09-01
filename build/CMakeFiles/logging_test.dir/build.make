@@ -95,8 +95,8 @@ logging_test: CMakeFiles/logging_test.dir/util/testutil.cc.o
 logging_test: CMakeFiles/logging_test.dir/util/logging_test.cc.o
 logging_test: CMakeFiles/logging_test.dir/build.make
 logging_test: libleveldb.a
-logging_test: lib/libgmock.a
-logging_test: lib/libgtest.a
+logging_test: lib/libgmockd.a
+logging_test: lib/libgtestd.a
 logging_test: third_party/benchmark/src/libbenchmark.a
 logging_test: /usr/lib/x86_64-linux-gnu/librt.so
 logging_test: CMakeFiles/logging_test.dir/link.txt

@@ -95,8 +95,8 @@ hash_test: CMakeFiles/hash_test.dir/util/testutil.cc.o
 hash_test: CMakeFiles/hash_test.dir/util/hash_test.cc.o
 hash_test: CMakeFiles/hash_test.dir/build.make
 hash_test: libleveldb.a
-hash_test: lib/libgmock.a
-hash_test: lib/libgtest.a
+hash_test: lib/libgmockd.a
+hash_test: lib/libgtestd.a
 hash_test: third_party/benchmark/src/libbenchmark.a
 hash_test: /usr/lib/x86_64-linux-gnu/librt.so
 hash_test: CMakeFiles/hash_test.dir/link.txt

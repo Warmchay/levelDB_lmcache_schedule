@@ -95,8 +95,8 @@ corruption_test: CMakeFiles/corruption_test.dir/util/testutil.cc.o
 corruption_test: CMakeFiles/corruption_test.dir/db/corruption_test.cc.o
 corruption_test: CMakeFiles/corruption_test.dir/build.make
 corruption_test: libleveldb.a
-corruption_test: lib/libgmock.a
-corruption_test: lib/libgtest.a
+corruption_test: lib/libgmockd.a
+corruption_test: lib/libgtestd.a
 corruption_test: third_party/benchmark/src/libbenchmark.a
 corruption_test: /usr/lib/x86_64-linux-gnu/librt.so
 corruption_test: CMakeFiles/corruption_test.dir/link.txt

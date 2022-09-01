@@ -95,8 +95,8 @@ memenv_test: CMakeFiles/memenv_test.dir/util/testutil.cc.o
 memenv_test: CMakeFiles/memenv_test.dir/helpers/memenv/memenv_test.cc.o
 memenv_test: CMakeFiles/memenv_test.dir/build.make
 memenv_test: libleveldb.a
-memenv_test: lib/libgmock.a
-memenv_test: lib/libgtest.a
+memenv_test: lib/libgmockd.a
+memenv_test: lib/libgtestd.a
 memenv_test: third_party/benchmark/src/libbenchmark.a
 memenv_test: /usr/lib/x86_64-linux-gnu/librt.so
 memenv_test: CMakeFiles/memenv_test.dir/link.txt

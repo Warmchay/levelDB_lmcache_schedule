@@ -95,8 +95,8 @@ coding_test: CMakeFiles/coding_test.dir/util/testutil.cc.o
 coding_test: CMakeFiles/coding_test.dir/util/coding_test.cc.o
 coding_test: CMakeFiles/coding_test.dir/build.make
 coding_test: libleveldb.a
-coding_test: lib/libgmock.a
-coding_test: lib/libgtest.a
+coding_test: lib/libgmockd.a
+coding_test: lib/libgtestd.a
 coding_test: third_party/benchmark/src/libbenchmark.a
 coding_test: /usr/lib/x86_64-linux-gnu/librt.so
 coding_test: CMakeFiles/coding_test.dir/link.txt

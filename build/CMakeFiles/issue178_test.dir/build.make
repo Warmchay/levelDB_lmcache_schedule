@@ -95,8 +95,8 @@ issue178_test: CMakeFiles/issue178_test.dir/util/testutil.cc.o
 issue178_test: CMakeFiles/issue178_test.dir/issues/issue178_test.cc.o
 issue178_test: CMakeFiles/issue178_test.dir/build.make
 issue178_test: libleveldb.a
-issue178_test: lib/libgmock.a
-issue178_test: lib/libgtest.a
+issue178_test: lib/libgmockd.a
+issue178_test: lib/libgtestd.a
 issue178_test: third_party/benchmark/src/libbenchmark.a
 issue178_test: /usr/lib/x86_64-linux-gnu/librt.so
 issue178_test: CMakeFiles/issue178_test.dir/link.txt

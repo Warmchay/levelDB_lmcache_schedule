@@ -95,8 +95,8 @@ version_set_test: CMakeFiles/version_set_test.dir/util/testutil.cc.o
 version_set_test: CMakeFiles/version_set_test.dir/db/version_set_test.cc.o
 version_set_test: CMakeFiles/version_set_test.dir/build.make
 version_set_test: libleveldb.a
-version_set_test: lib/libgmock.a
-version_set_test: lib/libgtest.a
+version_set_test: lib/libgmockd.a
+version_set_test: lib/libgtestd.a
 version_set_test: third_party/benchmark/src/libbenchmark.a
 version_set_test: /usr/lib/x86_64-linux-gnu/librt.so
 version_set_test: CMakeFiles/version_set_test.dir/link.txt

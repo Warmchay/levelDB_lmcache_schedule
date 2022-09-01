@@ -95,8 +95,8 @@ bloom_test: CMakeFiles/bloom_test.dir/util/testutil.cc.o
 bloom_test: CMakeFiles/bloom_test.dir/util/bloom_test.cc.o
 bloom_test: CMakeFiles/bloom_test.dir/build.make
 bloom_test: libleveldb.a
-bloom_test: lib/libgmock.a
-bloom_test: lib/libgtest.a
+bloom_test: lib/libgmockd.a
+bloom_test: lib/libgtestd.a
 bloom_test: third_party/benchmark/src/libbenchmark.a
 bloom_test: /usr/lib/x86_64-linux-gnu/librt.so
 bloom_test: CMakeFiles/bloom_test.dir/link.txt

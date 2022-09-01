@@ -95,8 +95,8 @@ dbformat_test: CMakeFiles/dbformat_test.dir/util/testutil.cc.o
 dbformat_test: CMakeFiles/dbformat_test.dir/db/dbformat_test.cc.o
 dbformat_test: CMakeFiles/dbformat_test.dir/build.make
 dbformat_test: libleveldb.a
-dbformat_test: lib/libgmock.a
-dbformat_test: lib/libgtest.a
+dbformat_test: lib/libgmockd.a
+dbformat_test: lib/libgtestd.a
 dbformat_test: third_party/benchmark/src/libbenchmark.a
 dbformat_test: /usr/lib/x86_64-linux-gnu/librt.so
 dbformat_test: CMakeFiles/dbformat_test.dir/link.txt

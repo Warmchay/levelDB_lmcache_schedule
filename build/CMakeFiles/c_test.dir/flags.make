@@ -3,13 +3,13 @@
 
 # compile C with /usr/bin/clang
 # compile CXX with /usr/bin/clang++
-C_FLAGS =  -Wstrict-prototypes   -Werror -Wthread-safety -std=c11
+C_FLAGS =  -Wstrict-prototypes -g   -Werror -Wthread-safety -pthread -std=c11
 
 C_DEFINES = -DLEVELDB_PLATFORM_POSIX=1
 
 C_INCLUDES = -I/home/ubuntu/cache_schedule/leveldb/build/include -I/home/ubuntu/cache_schedule/leveldb/. -I/home/ubuntu/cache_schedule/leveldb/include -I/home/ubuntu/cache_schedule/leveldb/third_party/benchmark/src/../include -isystem /home/ubuntu/cache_schedule/leveldb/third_party/googletest/googlemock/include -isystem /home/ubuntu/cache_schedule/leveldb/third_party/googletest/googlemock -isystem /home/ubuntu/cache_schedule/leveldb/third_party/googletest/googletest/include -isystem /home/ubuntu/cache_schedule/leveldb/third_party/googletest/googletest 
 
-CXX_FLAGS =  -fno-exceptions -fno-rtti   -Werror -Wthread-safety -std=c++11
+CXX_FLAGS =  -fno-exceptions -fno-rtti -g   -Werror -Wthread-safety -pthread -std=c++11
 
 CXX_DEFINES = -DLEVELDB_PLATFORM_POSIX=1
 

@@ -95,8 +95,8 @@ version_edit_test: CMakeFiles/version_edit_test.dir/util/testutil.cc.o
 version_edit_test: CMakeFiles/version_edit_test.dir/db/version_edit_test.cc.o
 version_edit_test: CMakeFiles/version_edit_test.dir/build.make
 version_edit_test: libleveldb.a
-version_edit_test: lib/libgmock.a
-version_edit_test: lib/libgtest.a
+version_edit_test: lib/libgmockd.a
+version_edit_test: lib/libgtestd.a
 version_edit_test: third_party/benchmark/src/libbenchmark.a
 version_edit_test: /usr/lib/x86_64-linux-gnu/librt.so
 version_edit_test: CMakeFiles/version_edit_test.dir/link.txt

@@ -95,8 +95,8 @@ crc32c_test: CMakeFiles/crc32c_test.dir/util/testutil.cc.o
 crc32c_test: CMakeFiles/crc32c_test.dir/util/crc32c_test.cc.o
 crc32c_test: CMakeFiles/crc32c_test.dir/build.make
 crc32c_test: libleveldb.a
-crc32c_test: lib/libgmock.a
-crc32c_test: lib/libgtest.a
+crc32c_test: lib/libgmockd.a
+crc32c_test: lib/libgtestd.a
 crc32c_test: third_party/benchmark/src/libbenchmark.a
 crc32c_test: /usr/lib/x86_64-linux-gnu/librt.so
 crc32c_test: CMakeFiles/crc32c_test.dir/link.txt

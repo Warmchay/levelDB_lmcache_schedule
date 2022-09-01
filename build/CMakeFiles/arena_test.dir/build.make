@@ -95,8 +95,8 @@ arena_test: CMakeFiles/arena_test.dir/util/testutil.cc.o
 arena_test: CMakeFiles/arena_test.dir/util/arena_test.cc.o
 arena_test: CMakeFiles/arena_test.dir/build.make
 arena_test: libleveldb.a
-arena_test: lib/libgmock.a
-arena_test: lib/libgtest.a
+arena_test: lib/libgmockd.a
+arena_test: lib/libgtestd.a
 arena_test: third_party/benchmark/src/libbenchmark.a
 arena_test: /usr/lib/x86_64-linux-gnu/librt.so
 arena_test: CMakeFiles/arena_test.dir/link.txt

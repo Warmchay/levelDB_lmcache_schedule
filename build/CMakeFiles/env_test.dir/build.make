@@ -95,8 +95,8 @@ env_test: CMakeFiles/env_test.dir/util/testutil.cc.o
 env_test: CMakeFiles/env_test.dir/util/env_test.cc.o
 env_test: CMakeFiles/env_test.dir/build.make
 env_test: libleveldb.a
-env_test: lib/libgmock.a
-env_test: lib/libgtest.a
+env_test: lib/libgmockd.a
+env_test: lib/libgtestd.a
 env_test: third_party/benchmark/src/libbenchmark.a
 env_test: /usr/lib/x86_64-linux-gnu/librt.so
 env_test: CMakeFiles/env_test.dir/link.txt

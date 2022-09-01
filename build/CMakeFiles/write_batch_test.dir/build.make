@@ -95,8 +95,8 @@ write_batch_test: CMakeFiles/write_batch_test.dir/util/testutil.cc.o
 write_batch_test: CMakeFiles/write_batch_test.dir/db/write_batch_test.cc.o
 write_batch_test: CMakeFiles/write_batch_test.dir/build.make
 write_batch_test: libleveldb.a
-write_batch_test: lib/libgmock.a
-write_batch_test: lib/libgtest.a
+write_batch_test: lib/libgmockd.a
+write_batch_test: lib/libgtestd.a
 write_batch_test: third_party/benchmark/src/libbenchmark.a
 write_batch_test: /usr/lib/x86_64-linux-gnu/librt.so
 write_batch_test: CMakeFiles/write_batch_test.dir/link.txt
